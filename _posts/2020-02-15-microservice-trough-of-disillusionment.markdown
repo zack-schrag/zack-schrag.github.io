@@ -1,9 +1,10 @@
 ---
-layout: post
+layout: default
 title: "Entering the Microservice Trough of Disillusionment: What Did We Learn?"
 categories: microservices
 excerpt_separator: <!--more-->
 ---
+
 It *seems* like we are beginning to enter the Trough of Disillusionment in the [hype cycle](https://en.wikipedia.org/wiki/Hype_cycle) for microservices. We're starting to see more and more frustration with the microservices approach and how they have failed to meet our expectations. It doesn't take a lot of Googling to see that. Let's take a step back and see what we can learn from the last handful of years of microservices. Then we can be equipped to make decisions regarding future trends, hopefully with a healthier perspective.
 
 <!--more-->

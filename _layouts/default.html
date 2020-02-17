@@ -2,15 +2,6 @@
 <html lang="{{ site.lang | default: "en-US" }}">
 
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158605738-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-158605738-1');
-    </script>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
@@ -24,8 +15,15 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          {% include nav.html %}
-          <h1 id="project_title">{{ page.title }}</h1>
+          <h1 id="project_title"><a id="home_link" href="{{ site.base_url }}/">{{ site.title | default: site.github.repository_name }}</a></h1>
+          <h2 id="project_tagline">{{ page.title }}</h2>
+
+          {% if site.show_downloads %}
+            <section id="downloads">
+              <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="{{ site.github.tar_url }}">Download this project as a tar.gz file</a>
+            </section>
+          {% endif %}
         </header>
     </div>
 
