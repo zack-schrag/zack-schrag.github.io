@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: post
 title: "Entering the Microservice Trough of Disillusionment: What Did We Learn?"
 categories: microservices
 excerpt_separator: <!--more-->
 ---
-It *seems* like we are beginning to enter the "Trough of Disillusionment" in the [hype cycle](https://en.wikipedia.org/wiki/Hype_cycle) for microservices. We're starting to see more and more frustration with the microservices approach and how they have failed to meet our expectations. It doesn't take a lot of Googling to see that. Let's take a step back and see what we can learn from the last handful of years of microservices. Then we can be equipped to make decisions regarding future trends, hopefully with a healthier perspective.
+It *seems* like we are beginning to enter the Trough of Disillusionment in the [hype cycle](https://en.wikipedia.org/wiki/Hype_cycle) for microservices. We're starting to see more and more frustration with the microservices approach and how they have failed to meet our expectations. It doesn't take a lot of Googling to see that. Let's take a step back and see what we can learn from the last handful of years of microservices. Then we can be equipped to make decisions regarding future trends, hopefully with a healthier perspective.
 
 <!--more-->
 
@@ -24,7 +24,7 @@ You've just finished a long day at work, you come home and just want to kick you
 
 Obviously, this is a bit of a silly example. It doesn't make sense to have the oven connected to your sink. But this is what we do in software *all* the time. We add dependencies where they don't make sense, do the quick fix, and say we'll fix it when we have more time.
 
-In microservices, if a service does not have [independent value](TODO) and is too tightly coupled to others, you can quickly create a situation like the analogy above. Microservices have reminded us the importance of having sensible dependency hierarchies.
+In microservices, if a service does not have independent value and is too tightly coupled to others, you can quickly create a situation like the analogy above. Microservices have reminded us the importance of having sensible dependency hierarchies.
 
 ### Interface-First Development
 >
@@ -32,7 +32,7 @@ In microservices, if a service does not have [independent value](TODO) and is to
 
 As developers, we sometimes dive straight into implementation without thinking too much about how some component is to be interacted with. In microservices, however, there are too many boundary points to avoid thinking about "user experience" (user being anyone using your code, whether it's via a REST API, language interface, or UI). It's very important to design the interface upfront and get feedback on it before diving into implementation. You might say, "but how can you know what the interface is without diving into the implementation, won't the interface emerge from that?". No! An interface may emerge from it, but not a well-designed one. 
 
-Imagine if a restaraunt approached their menu this way. Chef Bob goes into the kitchen and starts experimenting with new recipes. Once he finds one he likes, he tosses together a menu that makes sense to him based on the recipe he likes. And it reads like this:
+Imagine if a restaurant approached their menu this way. Chef Bob goes into the kitchen and starts experimenting with new recipes. Once he finds one he likes, he tosses together a menu that makes sense to him based on the recipe he likes. And it reads like this:
 ```
 1 tortilla
 1/2 shredded chicken breast

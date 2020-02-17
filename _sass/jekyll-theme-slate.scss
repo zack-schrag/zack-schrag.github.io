@@ -122,6 +122,22 @@ footer a {
   text-decoration: underline;
 }
 
+#navigation_bar a {
+  font-size: 15px;
+  color: #8b8b8b;
+}
+
+#navigation_bar a:hover {
+  font-size: 16px;
+  color: #8b8b8b;
+  text-decoration: none;
+}
+
+.post_date {
+  font-size: 14px;
+  font-style: italic;
+}
+
 em, cite {
   font-style: italic;
 }
