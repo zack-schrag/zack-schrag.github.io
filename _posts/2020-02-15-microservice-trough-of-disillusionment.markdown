@@ -2,6 +2,7 @@
 layout: default
 title: "Entering the Microservice Trough of Disillusionment: What Did We Learn?"
 categories: microservices
+tags: microservices architecture
 excerpt_separator: <!--more-->
 ---
 
