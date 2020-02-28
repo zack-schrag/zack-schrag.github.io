@@ -10,7 +10,7 @@ It *seems* like we are beginning to enter the Trough of Disillusionment in the [
 
 <!--more-->
 
-### Understanding Your Use Cases
+## Understanding Your Use Cases
 Often times we like to cite the benefits of using one tool / technique / architecture, but fail to ground those benefits in real needs of the business. It's like we are in a car dealership in San Diego and hear the pitch from the sales person: "This vehicle is equipped with remote start, so you can heat up your car from the warmth of your home! And it only costs an extra $1000!"
 
 "Wow", you think, "that's amazing! Heating up my car without having to walk outside is so cool! I should get that in case I ever decide to move somewhere cold." However, you fail to ask yourself questions like:
@@ -21,14 +21,14 @@ Often times we like to cite the benefits of using one tool / technique / archite
 
 This is what we (developers) love to do with technology. We see the benefits that some new shiny technology has and we want to start using it. We often neglect to ground those benefits in reality and ask ourselves if those solutions are actually solving problems that we have. Microservices are no different, for a while it was the shiny new thing and everyone wanted in on the action. However, many failed to ground the promises of microservices in the actual problems their business has.
 
-### Sensible Dependencies
+## Sensible Dependencies
 You've just finished a long day at work, you come home and just want to kick your feet up and enjoy a frozen pizza. You turn on the oven and throw in the pizza. Then you try to turn on the sink, and the water is not running! After a long investigation, you determine that somehow turning the oven on causes your faucet to break. How confusing, who would make those two things connected?!?
 
 Obviously, this is a bit of a silly example. It doesn't make sense to have the oven connected to your sink. But this is what we do in software *all* the time. We add dependencies where they don't make sense, do the quick fix, and say we'll fix it when we have more time.
 
 In microservices, if a service does not have independent value and is too tightly coupled to others, you can quickly create a situation like the analogy above. Microservices have reminded us the importance of having sensible dependency hierarchies.
 
-### Interface-First Development
+## Interface-First Development
 >
 > Note: In this section, although I use a C# interface as an example, I'm referring to interfaces as the *concept*, i.e. an entry point into some system. It could be a REST API, gRPC interface, language interface, UI screen, etc.
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Exceptions vs Results in C#
+title: Exceptions vs. Results in C#
 categories: csharp
 tags: exceptions csharp c#
 excerpt_separator: <!--more-->

@@ -1,6 +1,6 @@
-title: Zack Schrag
+title: Architecting Excellence
 # baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://zack-schrag.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://architectingexcellence.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 theme: jekyll-theme-slate
