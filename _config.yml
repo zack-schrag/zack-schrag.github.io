@@ -1,6 +1,6 @@
-title: Architecting Excellence
+title: schragware blog
 # baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://architectingexcellence.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://schragware.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 theme: jekyll-theme-slate
