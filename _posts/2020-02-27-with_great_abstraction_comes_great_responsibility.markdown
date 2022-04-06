@@ -18,11 +18,11 @@ What does any of this have to do with abstraction? By now, you're probably start
 The abstraction my wife interacts with is the sink. She inputs dishes into the sink, and the outputs are clean dishes in the cabinet. The implementation details of doing the dishes are abstracted away from her. She doesn't concern herself with the type of scrubber I use, the type of dish soap, the temperature of the water, etc.
 
 ## Unintended Consequences of Abstractions
-**When creating abstractions, you (the developer) bring responsibility onto yourself to maintain the abstraction, whether you want it or not.** I've seen many cases (including things I've built myself) where an abstraction is built so that another developer (perhaps a new hire or a junior developer) doesn't have to think about the details of what's happening underneath. The intent of this is pure - save everybody's time by abstracting some tedious or tricky part of the code away into a tidy little wrapper.
+**When creating abstractions, you (the developer) bring responsibility onto yourself to maintain the abstraction, whether you want it or not.** I've seen many cases (including things I've built myself) where an abstraction is built so that another developer doesn't have to think about the details of what's happening underneath. The intent of this is pure - save everybody's time by abstracting some tedious or tricky part of the code away into a tidy little wrapper.
 
 The problem with this is more often than not, the developer does not want the responsibility of maintaining that abstraction, they just want to hack it together and hand it off. My guess is that many of you can relate. Have you ever created a little script and passed it around to other members of your team? Did anyone ever ask you questions about it on how to get it working for their use case? Or maybe they even asked you to add some feature to it to do something different? And in your head you think to yourself "Why did I ever create this stupid script?!? This was supposed to be a quick fix for one person, but now I have people asking me to add new features to it??"
 
-The script is a very minor example, but let's take it a step further. As engineers, we *love* to create custom frameworks, don't we? We have testing frameworks, DevOps frameworks, framework for our frameworks, the list goes on and on. Sometimes, these frameworks can be excellent and meet a need. However, in other times, if we aren't thoughtful about our approach, we can end up frustrated like in the script example. Frameworks are one big abstraction, and if you aren't ready to take on the responsibility of maintaining it, answering questions, tweaking things endlessly, then do not build it! With great abstraction comes great responsibility.
+The script is a very minor example, but let's take it a step further. As engineers, we *love* to create custom frameworks, don't we? We have testing frameworks, DevOps frameworks, framework for our frameworks, the list goes on and on. Sometimes, these frameworks can be excellent and meet a need. However, in other times, if we aren't thoughtful about our approach, we can end up frustrated like in the script example. Frameworks are one big abstraction, and if you aren't ready to take on the responsibility of maintaining it, answering questions, doing bug fixes, then be *very* cautious building it! With great abstraction comes great responsibility.
 
 ## Handling Leaky Abstractions
 Something worth noting is the "Law of Leaky Abstractions", coined by Joel Spolsky. You can read about it [here](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/). The TLDR is that all abstractions are inherently "leaky". I.e. they are not perfect and therefore require the consumer of the abstraction to be concerned about details that were intended to be abstracted away. For example, let's say I really drop the ball doing the dishes, and I put away all of our pots and pans without actually washing them. They have spaghetti sauce cooked into them, some of them have grease caked onto them. It's a real mess. To make matters worse, I just left for a business trip for two weeks. Let's imagine what that phone call might go like.
@@ -46,37 +46,29 @@ Now, let's consider a slightly different scenario. Let's say my wife had *never*
 > **Me:** \*insert sarcastic tone\* Well hello to you to. Under the sink in the cabinet.  
 **Wife:** There's 3 sponges. How am I supposed to pick the right one? You should just have one sponge. This is ridiculous. I called all of our friends and they all only have one sponge.  
 > **Me:** Use any of them, I typically use the blue one because it can scrub a little better, but it really doesn't matter. Sorry that I like to have backups.  
-> **Wife:** \*\*whispers under her breath\*\* *it's so dumb there are 3 sponges, how could anyone have ever know to pick the right one*. Ok I'll use that one. Do we own a dishwasher?  
-> **Me:** No we don't. I do all the dishes by hand.  
+> **Wife:** \*\*whispers under her breath\*\* *it's so dumb there are 3 sponges, how could anyone have ever know to pick the right one*. Ok I'll use that one. Where's the dishwasher?  
+> **Me:** We don't have one. I do all the dishes by hand.  
 > **Wife:** What?!? Why don't we have a dishwasher? Don't all modern houses have a dishwasher?   
 > **Me:** Yeah most do, but we don't.  
 > **Wife:** Why not?  
 > **Me:** It hasn't been a financial priority lately.  
 > **Wife:** Hmmpf, fine. I'll do them by hand I guess. We really need to figure out our budget so we can get a dishwasher.  
 > **Me**: I mean, sure, we can talk about that. But even if we ordered one today it probably won't get installed until I'm back anyways.  
-> **Wife**: Ugh, this is too complicated. How could anyone ever figure this out unless they've worked as a dishwasher at a restaurant. I'm going to order delivery.  
-> **Wife:** And by the way, I can't beleive you left the dishes in such a mess. You really need to figure out how to not let this happen again.  
+> **Wife**: Ugh, this is too complicated. How could anyone ever figure this out unless they've worked as a professional dishwasher at a restaurant. I'm going to order delivery.  
+> **Wife:** And by the way, I can't believe you left the dishes in such a mess. You really need to figure out how to not let this happen again.  
 > **Me:** Well sorrrryyyyy! I'M NOT PERFECT! How have you NEVER done dishes before?  
 > **Wife:** Oh I'MMM incompetent?!? YOU'RE the incompetent one! You can't even clean the dishes right and that's your job! The laundry gets done exactly right every week and you can't even wash a stupid pan!  
-> **Me**: Well what about that one time where you stained my favorite shirt! Blah blah...
+> **Me**: Well what about that one time where you stained my favorite shirt!  
+> ...
 
 Two very different phone calls. One is quick, reasonable, and with one simple question answered, my wife can do the dishes. The other call, each step is painful and she questions everything about the process I have in place for doing dishes. Sound familiar? How many times has your team been fighting fires before a big deadline and there is the disgruntled voice questioning every decision ever made (this has been me *plenty* of times)? "Why did we do it this way? This is stupid. If only we did \*insert hot new technology here\* we wouldn't have this problem."
 
-What is the root problem in the second phone call? It's simple, I created an abstraction (the sink), but I wasn't prepared to accept FULL responsibility of that abstraction. Sure, it's a little strange my wife had never done the dishes before, but by deciding to own the chore of doing the dishes, I implicitly took responsibility of the abstraction. Which, since my wife had never done dishes, meant I should have been prepared for a situation where the abstraction "leaked".
+What is the root problem in the second phone call? It's simple, I created an abstraction (the sink), but I wasn't prepared to accept FULL responsibility of that abstraction. Sure, it's a little strange my wife had never done the dishes before, but by deciding to own the chore of doing the dishes, I implicitly took responsibility of the abstraction. Which, since my wife had never done dishes, meant I should have been prepared for a situation where the abstraction "leaked". At the very least, I should have walked her through it prior to leaving, when there wasn't any urgency.
 
-## Concealed vs. Convenience Abstractions
-What's the point of all of this? There are two kinds of abstractions that we create, and it's important to be cognizant of which one(s) you are creating:  
-- An abstraction where the consumer is not expected to know how things work underneath the abstraction. E.g. an electrician, your average homeowner doesn't know how wire things up but the electrician does. I like to call these **concealed abstractions**.  
-- An abstraction intended to make the consumer's job *easier*, but they are still expected to know how things work underneath the abstraction. E.g. a power drill, you could still use a regular screwdriver because you understand how it works, but the power drill makes life much easier. I like to call these **convenience abstractions**.  
+---
+Dysfunction arises when expectations are mismatched for the thing you intend on building. I've seen this happen with product features - some department asks for a "one-off" tool to simplify their job a bit, and the problem-solving engineers happily spend a day or two to help them. However, later the department asks for more "quick" updates and fixes and "oh, how hard would it be to add X?". Suddenly you've got a full-fledged product that's built poorly, and the engineering team that built it begrudgingly supports it. To clarify, helping other departments and team members is a great thing, and it can really help build a positive culture. All I'm saying is to be aware of what you're doing when you take on that work - it's probably more than what you think.
 
-Dysfunction arises when expectations are mismatched for the type of abstraction. Perhaps you created an abstraction intending for it to be a convenience abstraction, but the consumer expected a concealed abstraction. In this situation, the consumer will be frustrated when the abstraction leaks, and you (the developer) will be frustrated they couldn't debug on their own. However, if it is understood from the beginning that it was intended as a concealed abstraction, then your reaction will be to fix the leak as fast as possible. 
-
-Remember the script example from above? You intended for it to be a *convenience abstraction* but others treated it as a *concealed abstraction*. Had expectations been clearly set, you may have been able to avoid some frustration.
-
->
-> **Note:** It's possible that one abstraction could be both. For some consumers, it might be concealed because they've never worked with the underlying technology. For others, it might be a convenience because they have worked extensively with the underlying technology.
-
-Are you thinking of creating a new abstraction? Maybe a framework or a tool? Have you considered if you want it to be a convenience or a concealed abstraction? What happens when the abstraction leaks? Are you OK with being the point person? These are all questions that are good to consider before moving forward.
+Are you thinking of creating a new abstraction? Maybe a framework or a tool? Have you made it clear what the expectations are? What happens when the abstraction leaks? Are you OK with being the point person? These are all questions that are good to consider before moving forward.
 
 ---
 Abstractions are a fantastic tool for making life easier, but often they can be a catalyst for frustration and dysfunction in teams. In order to avoid this, it's important to **understand who you are creating the abstraction for, and be prepared for how to handle a situation when the abstraction leaks.** If we do that, we can help make life easier for the teams and organizations that we work in.
