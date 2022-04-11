@@ -73,9 +73,9 @@ Like mentioned above, the Terraform registry has 8867 modules that you can use. 
 > \* It's worth noting that Pulumi has the ability to convert Terraform HCL to Pulumi code via the [tf2pulumi](https://github.com/pulumi/tf2pulumi) tool. So technically, you can use any Terraform module in Pulumi, you just need to go through the steps of converting it.
 
 ## Cloud API Coverage: Winner - Pulumi
-For the big 3 cloud providers (AWS, Azure, GCP), Pulumi has what they call "native" providers. They essentially wrap the cloud's native API, and can therefore offer same-day, 100% coverage of what the cloud itself offers. This is a pretty big deal if you need the latest and greatest.
+For the big 3 cloud providers (AWS, Azure, GCP), Pulumi has what they call "native" providers. They essentially wrap the cloud's native API, and can therefore offer same-day, 100% coverage of what the cloud itself offers.
 
-Terraform providers need to be kept up to date by the maintainers. For most use cases, this probably is not a big deal, but it's worth calling out.
+Terraform providers need to be kept up to date by the maintainers. For most use cases, this probably is not a big deal, but it's worth calling out. However, as an example, [AWS Lambda Function URLs](https://aws.amazon.com/about-aws/whats-new/2022/04/aws-lambda-function-urls-built-in-https-endpoints/) were announced on April 6th, 2022. On April 7th, [Terraform had already added it to the AWS provider](https://github.com/hashicorp/terraform-provider-aws/issues/24050#issuecomment-1092271085). Not same day, but a pretty impressive turnaround!
 
 # What should I choose if...?
 ## ... I am starting from scratch?
